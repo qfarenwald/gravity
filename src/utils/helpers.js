@@ -1,3 +1,5 @@
+// clean to filter through and find trails with a decent greater than ?
+
 export const filteredTrailData = trails => {
   return trails.map(trail => ({
     id: trail.id,
