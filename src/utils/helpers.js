@@ -1,18 +1,14 @@
-export const filteredTrailData1 = trails => {
+export const filteredTrailData = trails => {
   return trails.map(trail => ({
-    decent: trail.decent,
-    difficulty: trail.difficulty,
     id: trail.id,
     name: trail.name,
-    stars: trail.stars
-  }))
-}
-
-export const filteredTrailData2 = trails => {
-  return trails.map(trail => ({
+    stars: trail.stars,
+    summary: trail.summary,
+    decent: trail.decent,
+    difficulty: trail.difficulty,
     conditonDate: trail.conditonDate,
     conditionStatus: trail.conditionStatus,
     latitude: trail.latitude,
-    summary: trail.summary
+    longitude: trail.longitude
   }))
 }
