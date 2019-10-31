@@ -7,7 +7,6 @@ class App extends Component {
 
 // if doing multiple locations, take out of componentDidMount and on a button click to move from home page to trails page
 // if ^ interpolate fetch with diff coordinates?
-// split up data into two fetches and clean data twice?
 // move App to either components or container
 
   componentDidMount = async () => {
