@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { fetchData } from './utils/apiCalls';
 import { filteredTrailData } from './utils/helpers';
-import { getTrails } from './actions';
 import { connect } from 'react-redux';
+import { getTrails } from './actions';
+import { bindActionCreators } from 'redux';
 import './App.css';
 
 export class App extends Component {
@@ -11,14 +12,13 @@ export class App extends Component {
 // if ^ interpolate fetch with diff coordinates?
 // move App to either components or container
 
-  componentDidMount = async () => {
+  async componentDidMount() {
     const { getTrails } = this.props
 
     try {
       const trails = await fetchData('https://www.mtbproject.com/data/get-trails?lat=39.7392&lon=-104.9903&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a')
       const cleanTrails = filteredTrailData(trails.trails)
       console.log('ct', cleanTrails)
-      console.log('get', getTrails)
       getTrails(cleanTrails)
     } catch {
       console.log('error')
@@ -35,8 +35,12 @@ export class App extends Component {
 
 }
 
-export const mapDispatchToProps = dispatch => ({
-  getTrails: trails => dispatch( getTrails(trails) )
-})
+export const mapDispatchToProps = dispatch => (
+  bindActionCreators(
+    {
+      getTrails
+    },
+  dispatch)
+)
 
 export default connect(null, mapDispatchToProps)(App);
