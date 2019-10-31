@@ -18,7 +18,6 @@ export class App extends Component {
     try {
       const trails = await fetchData('https://www.mtbproject.com/data/get-trails?lat=39.7392&lon=-104.9903&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a')
       const cleanTrails = filteredTrailData(trails.trails)
-      console.log('ct', cleanTrails)
       getTrails(cleanTrails)
     } catch {
       console.log('error')
@@ -32,7 +31,6 @@ export class App extends Component {
       </div>
     )
   }
-
 }
 
 export const mapDispatchToProps = dispatch => (
