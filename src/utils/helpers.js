@@ -9,5 +9,10 @@ export const filteredTrailData1 = trails => {
 }
 
 export const filteredTrailData2 = trails => {
-  return 
+  return trails.map(trail => ({
+    conditonDate: trail.conditonDate,
+    conditionStatus: trail.conditionStatus,
+    latitude: trail.latitude,
+    summary: trail.summary
+  }))
 }
