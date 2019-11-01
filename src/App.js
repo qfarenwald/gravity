@@ -4,6 +4,7 @@ import { filteredTrailData } from './utils/helpers';
 import { connect } from 'react-redux';
 import { getTrails } from './actions';
 import { bindActionCreators } from 'redux';
+import { Route } from 'react-router-dom';
 import { Header } from './components/Header/Header';
 import { Location } from './components/Location/Location';
 import TrailsContainer from './containers/TrailsContainer/TrailsContainer';
@@ -30,9 +31,9 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Location />
-        <TrailsContainer />
+        <Route path='/' render={() => <Header />} />
+        <Route exact path='/' render={() => <Location />} />
+        <Route exact path='/trails' render={() => <TrailsContainer />} />
       </div>
     )
   }

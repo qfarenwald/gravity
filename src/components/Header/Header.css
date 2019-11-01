@@ -1,10 +1,10 @@
 .Header-img {
   margin: 100px 100px 20px 100px;
+  padding-top: 100px;
   width: 80%;
 }
 
 .Header-h2 {
   color: white;
-  /* font-weight: lighter; */
   letter-spacing: 50px;
 }
