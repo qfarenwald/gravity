@@ -1,7 +1,6 @@
 .Trail {
   align-items: center;
-  /* background-color: #000000; */
-  background-image: linear-gradient(to right, rgba(56,180,73,0), rgba(56,180,73,1));
+  background-image: linear-gradient(to right, rgba(56,180,73,.5), rgba(56,180,73,.9));
   border-radius: 50px;
   color: #FFFFFF;
   display: flex;
@@ -12,5 +11,28 @@
 .Trail-p {
   letter-spacing: 5px;
   padding: 0 15px 0 15px;
-  width: 50%;
+}
+
+.stars {
+  width: 20%
+}
+
+.name {
+  width: 80%
+}
+
+.Trail-btn {
+  background-color: #38B449;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  padding: 20px;
+  height: 100%;
+}
+
+.Trail-btn:hover {
+  background-color: #33993D;
+  color: white;
+  cursor: pointer;
 }
