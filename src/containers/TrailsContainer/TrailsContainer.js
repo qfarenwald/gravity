@@ -4,13 +4,19 @@ import { connect } from 'react-redux';
 import './TrailsContainer.css';
 
 const TrailsContainer = ({ trails }) => {
-  console.log('trailsFromState', trails)
-  // const trailsToDisplay = trails.map((trail) => {
-  //
-  // })
+
+  const trailsToDisplay = trails.map((trail) => {
+    return <Trail
+      key={trail.id}
+      id={trail.id}
+      name={trail.name}
+      stars={trail.stars}
+    />
+  })
+
   return (
     <div>
-      <Trail />
+      {trailsToDisplay}
     </div>
   )
 }

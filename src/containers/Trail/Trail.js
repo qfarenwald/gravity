@@ -1,10 +1,11 @@
 import React from 'react';
 import './Trail.css';
 
-export const Trail = () => {
+export const Trail = ({ name, stars }) => {
   return (
     <section className="Trail">
-      <p>hello</p>
+      <p>{name}</p>
+      <p>{stars}</p>
     </section>
   )
 }
