@@ -27,7 +27,10 @@ export class ShuttleForm extends Component {
   handleClick = (e) => {
     e.preventDefault()
     const { makeBooking } = this.props
-    this.props.makeBooking(this.state)
+    if(this.state.name !== '' && this.state.email !== '') {
+      makeBooking(this.state)
+      this.clearInputs()
+    }
   }
 
   render() {
