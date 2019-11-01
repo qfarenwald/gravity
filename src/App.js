@@ -31,9 +31,9 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <Location />
-        <TrailsContainer />
+        <Route path='/' render={() => <Header />} />
+        <Route exact path='/' render={() => <Location />} />
+        <Route exact path='/trails' render={() => <TrailsContainer />} />
       </div>
     )
   }
