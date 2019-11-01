@@ -12,10 +12,10 @@ body {
 
 body::after {
   content: "";
-  background: url('./images/gravity_bkgd.jpg') no-repeat;
-  -webkit-background-size: cover;
+  background: url('./images/gravity_bkgd.png') no-repeat;
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover; */
   background-size: cover;
   opacity: 0.15;
   top: 0;
