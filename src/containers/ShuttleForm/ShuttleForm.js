@@ -5,7 +5,6 @@ import { makeBooking } from '../../actions';
 import './ShuttleForm.css';
 
 export class ShuttleForm extends Component {
-
   constructor() {
     super();
     this.state = {
@@ -27,13 +26,11 @@ export class ShuttleForm extends Component {
 
   handleClick = (e) => {
     e.preventDefault()
-    console.log('state', this.state)
-    makeBooking(this.state)
+    const { makeBooking } = this.props
+    this.props.makeBooking(this.state)
   }
 
   render() {
-    const { makeBooking } = this.props
-
     return (
       <form className="ShuttleForm">
         <input className="ShuttleForm-input"
@@ -50,7 +47,7 @@ export class ShuttleForm extends Component {
           value={this.state.email}
           onChange={this.handleChange}
         />
-        <button className="ShuttleForm-btn" onClick={this.handleClick}>SUBMIT BOOKING</button>
+        <button type="button" className="ShuttleForm-btn" onClick={this.handleClick}>SUBMIT BOOKING</button>
       </form>
     )
   }
@@ -61,7 +58,7 @@ export const mapDispatchToProps = dispatch => (
     {
       makeBooking
     },
-    dispatch)
+  dispatch)
 )
 
 export default connect(null, mapDispatchToProps)(ShuttleForm)

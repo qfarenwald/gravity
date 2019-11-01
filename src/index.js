@@ -11,11 +11,11 @@ import App from './App';
 const store = createStore(rootReducer, composeWithDevTools());
 
 const router = (
-  <BrowserRouter>
-    <Provider store={store}>
+  <Provider store={store}>
+    <BrowserRouter>
       <App />
-    </Provider>
-  </BrowserRouter>
+    </BrowserRouter>
+  </Provider>
 )
 
 ReactDOM.render(router, document.getElementById('root'));
