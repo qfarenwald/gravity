@@ -4,6 +4,7 @@ import { filteredTrailData } from './utils/helpers';
 import { connect } from 'react-redux';
 import { getTrails } from './actions';
 import { bindActionCreators } from 'redux';
+import { Route } from 'react-router-dom';
 import { Header } from './components/Header/Header';
 import { Location } from './components/Location/Location';
 import TrailsContainer from './containers/TrailsContainer/TrailsContainer';
