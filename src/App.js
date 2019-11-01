@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getTrails } from './actions';
 import { bindActionCreators } from 'redux';
 import { Header } from './components/Header/Header';
+import { Location } from './components/Location/Location';
 import './App.css';
 
 export class App extends Component {
@@ -29,6 +30,7 @@ export class App extends Component {
     return (
       <div className="App">
         <Header />
+        <Location />
       </div>
     )
   }
