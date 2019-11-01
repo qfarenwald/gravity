@@ -6,6 +6,7 @@ import { getTrails } from './actions';
 import { bindActionCreators } from 'redux';
 import { Header } from './components/Header/Header';
 import { Location } from './components/Location/Location';
+import { TrailsContainer } from './containers/TrailsContainer/TrailsContainer';
 import './App.css';
 
 export class App extends Component {
@@ -31,6 +32,7 @@ export class App extends Component {
       <div className="App">
         <Header />
         <Location />
+        <TrailsContainer />
       </div>
     )
   }
