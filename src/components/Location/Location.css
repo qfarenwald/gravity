@@ -22,4 +22,5 @@
 .Location-btn:hover {
   background-color: #33993D;
   color: white;
+  cursor: pointer;
 }
