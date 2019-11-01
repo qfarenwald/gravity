@@ -11,6 +11,7 @@
 .Location-btn {
   background-color: #38B449;
   border: none;
+  border-radius: 25px;
   font-size: 1rem;
   letter-spacing: 5px;
   padding: 20px;
@@ -20,4 +21,5 @@
 
 .Location-btn:hover {
   background-color: #33993D;
+  color: white;
 }
