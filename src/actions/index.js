@@ -3,7 +3,7 @@ export const getTrails = trails => ({
   trails
 })
 
-export const createBooking = booking => ({
+export const makeBooking = booking => ({
   type: 'MAKE_BOOKING',
   booking
 })
