@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import { Route } from 'react-router-dom';
 import { Header } from './components/Header/Header';
 import { Location } from './components/Location/Location';
+import { ShuttleForm } from './containers/ShuttleForm/ShuttleForm';
 import TrailsContainer from './containers/TrailsContainer/TrailsContainer';
 import './App.css';
 
@@ -34,6 +35,7 @@ export class App extends Component {
         <Route path='/' render={() => <Header />} />
         <Route exact path='/' render={() => <Location />} />
         <Route exact path='/trails' render={() => <TrailsContainer />} />
+        <Route exact path='/shuttle' render={() => <ShuttleForm />} />
       </div>
     )
   }
