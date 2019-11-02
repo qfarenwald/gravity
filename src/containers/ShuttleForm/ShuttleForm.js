@@ -69,7 +69,7 @@ export class ShuttleForm extends Component {
         {this.renderRedirect()}
         <button disabled={this.state.formReady ? false : true} type="button" className="ShuttleForm-btn" onClick={this.setRedirect}>SUBMIT BOOKING</button>
 
-        <Link to='/confirmation' className="link"><h5>BACK TO TRAILS</h5></Link>
+        <Link to='/trails' className="link"><h5>BACK TO TRAILS</h5></Link>
       </form>
     )
   }
