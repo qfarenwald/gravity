@@ -12,11 +12,15 @@ const TrailsContainer = ({ trails }) => {
       id={trail.id}
       name={trail.name}
       stars={trail.stars}
+      difficulty={trail.difficulty}
+      descent={trail.descent}
+      conditionDate={trail.conditionDate}
+      conditionStatus={trail.conditionStatus}
     />
   })
 
   return (
-    <div>
+    <div className="TrailsContainer">
       <h3>PICK YOUR TRAIL</h3>
       {trailsToDisplay}
       <Link to='/' className="link"><h5>BACK TO LOCATIONS</h5></Link>
