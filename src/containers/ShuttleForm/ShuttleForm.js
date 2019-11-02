@@ -10,28 +10,35 @@ export class ShuttleForm extends Component {
     super();
     this.state = {
       name: '',
-      email: ''
+      email: '',
+      formReady: false
     }
   }
 
   clearInputs = () => {
     this.setState({
       name: '',
-      email: ''
+      email: '',
+      formReady: false
     })
   }
 
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
+    if(this.state.name !== '' && this.state.email !== '') {
+      this.setState({
+        formReady: true
+      })
+    }
   }
 
   handleClick = (e) => {
     e.preventDefault()
     const { makeBooking } = this.props
-    if(this.state.name !== '' && this.state.email !== '') {
+    if (this.state.name !== '' && this.state.email !== '') {
       makeBooking(this.state)
       this.clearInputs()
-    }
+    } 
   }
 
   render() {
@@ -52,7 +59,8 @@ export class ShuttleForm extends Component {
           value={this.state.email}
           onChange={this.handleChange}
         />
-        <button type="button" className="ShuttleForm-btn" onClick={this.handleClick}>SUBMIT BOOKING</button>
+        <p className="ShuttleForm-p">{this.state.formReady ? null : "PLEASE FILL OUT ALL INPUTS"}</p>
+        <Link to='/confirmation'><button disabled={this.state.formReady ? false : true} type="button" className="ShuttleForm-btn" onClick={this.handleClick}>SUBMIT BOOKING</button></Link>
         <Link to='/trails' className="link"><h5>BACK TO TRAILS</h5></Link>
       </form>
     )

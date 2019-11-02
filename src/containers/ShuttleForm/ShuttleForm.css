@@ -24,7 +24,7 @@
   font-size: 1rem;
   letter-spacing: 5px;
   padding: 20px;
-  margin: 50px;
+  margin-top: 50px;
   width: 300px;
 }
 
@@ -32,4 +32,14 @@
   background-color: #33993D;
   color: white;
   cursor: pointer;
+}
+
+.ShuttleForm-btn:disabled {
+  background-color: grey;
+  color: black;
+  cursor: not-allowed;
+}
+
+.ShuttleForm-p {
+  color: red;
 }
