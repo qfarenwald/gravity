@@ -38,9 +38,7 @@ export class ShuttleForm extends Component {
     if (this.state.name !== '' && this.state.email !== '') {
       makeBooking(this.state)
       this.clearInputs()
-    } else {
-
-    }
+    } 
   }
 
   render() {
