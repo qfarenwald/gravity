@@ -21,20 +21,6 @@ export class ShuttleForm extends Component {
     }
   }
 
-  clearInputs = () => {
-    this.setState({
-      name: '',
-      email: '',
-      riders: '',
-      bikes: '',
-      date: '',
-      starttime: '',
-      endtime: '',
-      formReady: false,
-      redirect: false
-    })
-  }
-
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
     if(this.state.name !== '' && this.state.email !== '' && this.state.riders !== '' && this.state.bikes !== '' && this.state.date !== '' && this.state.starttime !== '' && this.state.endtime !== '') {
