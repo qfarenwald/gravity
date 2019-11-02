@@ -52,7 +52,7 @@ export class ShuttleForm extends Component {
           value={this.state.email}
           onChange={this.handleChange}
         />
-        <button type="button" className="ShuttleForm-btn" onClick={this.handleClick}>SUBMIT BOOKING</button>
+        <Link to='/confirmation'><button type="button" className="ShuttleForm-btn" onClick={this.handleClick}>SUBMIT BOOKING</button></Link>
         <Link to='/trails' className="link"><h5>BACK TO TRAILS</h5></Link>
       </form>
     )
