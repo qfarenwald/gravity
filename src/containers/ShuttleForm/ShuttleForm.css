@@ -33,3 +33,16 @@
   color: white;
   cursor: pointer;
 }
+
+.ShuttleForm-btn-disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: grey;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  padding: 20px;
+  margin-top: 50px;
+  width: 300px;
+}
