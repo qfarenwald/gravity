@@ -25,6 +25,11 @@
   width: 60%
 }
 
+.info {
+  color: black;
+  cursor: pointer;
+}
+
 .Trail-btn {
   background-color: #38B449;
   border: none;
