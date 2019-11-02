@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { makeBooking } from '../../actions';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import './ShuttleForm.css';
 
 export class ShuttleForm extends Component {
@@ -11,7 +11,8 @@ export class ShuttleForm extends Component {
     this.state = {
       name: '',
       email: '',
-      formReady: false
+      formReady: false,
+      redirect: false
     }
   }
 
@@ -19,7 +20,8 @@ export class ShuttleForm extends Component {
     this.setState({
       name: '',
       email: '',
-      formReady: false
+      formReady: false,
+      redirect: false
     })
   }
 
@@ -38,7 +40,19 @@ export class ShuttleForm extends Component {
     if (this.state.name !== '' && this.state.email !== '') {
       makeBooking(this.state)
       this.clearInputs()
-    } 
+    }
+  }
+
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/confirmation' />
+    }
   }
 
   render() {
@@ -60,8 +74,11 @@ export class ShuttleForm extends Component {
           onChange={this.handleChange}
         />
         <p className="ShuttleForm-p">{this.state.formReady ? null : "PLEASE FILL OUT ALL INPUTS"}</p>
-        <Link to='/confirmation'><button disabled={this.state.formReady ? false : true} type="button" className="ShuttleForm-btn" onClick={this.handleClick}>SUBMIT BOOKING</button></Link>
-        <Link to='/trails' className="link"><h5>BACK TO TRAILS</h5></Link>
+
+        {this.renderRedirect()}
+        <button disabled={this.state.formReady ? false : true} type="button" className="ShuttleForm-btn" onClick={this.setRedirect}>SUBMIT BOOKING</button>
+
+        <Link to='/confirmation' className="link"><h5>BACK TO TRAILS</h5></Link>
       </form>
     )
   }
@@ -76,3 +93,5 @@ export const mapDispatchToProps = dispatch => (
 )
 
 export default connect(null, mapDispatchToProps)(ShuttleForm)
+
+// <Link to='/confirmation'><button disabled={this.state.formReady ? false : true} type="button" className="ShuttleForm-btn" onClick={this.handleClick}>SUBMIT BOOKING</button></Link>

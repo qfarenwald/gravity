@@ -42,4 +42,6 @@
 
 .ShuttleForm-p {
   color: red;
+  font-size: .75rem;
+  letter-spacing: 5px;
 }
