@@ -10,7 +10,8 @@ export class ShuttleForm extends Component {
     super();
     this.state = {
       name: '',
-      email: ''
+      email: '',
+      formReady: false
     }
   }
 
@@ -34,9 +35,11 @@ export class ShuttleForm extends Component {
   handleClick = (e) => {
     e.preventDefault()
     const { makeBooking } = this.props
-    if(this.state.name !== '' && this.state.email !== '') {
+    if (this.state.name !== '' && this.state.email !== '') {
       makeBooking(this.state)
       this.clearInputs()
+    } else {
+
     }
   }
 
@@ -58,6 +61,7 @@ export class ShuttleForm extends Component {
           value={this.state.email}
           onChange={this.handleChange}
         />
+        <p className="ShuttleForm-p">{this.state.formReady ? null : "PLEASE FILL OUT ALL INPUTS"}</p>
         <Link to='/confirmation'><button disabled={this.state.formReady ? false : true} type="button" className="ShuttleForm-btn" onClick={this.handleClick}>SUBMIT BOOKING</button></Link>
         <Link to='/trails' className="link"><h5>BACK TO TRAILS</h5></Link>
       </form>
@@ -74,5 +78,3 @@ export const mapDispatchToProps = dispatch => (
 )
 
 export default connect(null, mapDispatchToProps)(ShuttleForm)
-//
-// className={this.state.formReady ? "ShuttleForm-btn" : "ShuttleForm-btn:disabled"}
