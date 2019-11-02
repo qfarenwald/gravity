@@ -102,7 +102,7 @@ export class ShuttleForm extends Component {
           value={this.state.endtime}
           onChange={this.handleChange}
         />
-        <p className="ShuttleForm-p">{this.state.formReady ? null : "PLEASE FILL OUT ALL INPUTS"}</p>
+        <p className={this.state.formReady ? "ShuttleForm-p-hidden" : "ShuttleForm-p"}>PLEASE FILL OUT ALL INPUTS</p>
 
         {this.renderRedirect()}
         <button disabled={this.state.formReady ? false : true} type="button" className="ShuttleForm-btn" onClick={this.handleSubmit}>SUBMIT BOOKING</button>
