@@ -11,6 +11,11 @@ export class ShuttleForm extends Component {
     this.state = {
       name: '',
       email: '',
+      riders: '',
+      bikes: '',
+      date: '',
+      starttime: '',
+      endtime: '',
       formReady: false,
       redirect: false
     }
@@ -20,6 +25,11 @@ export class ShuttleForm extends Component {
     this.setState({
       name: '',
       email: '',
+      riders: '',
+      bikes: '',
+      date: '',
+      starttime: '',
+      endtime: '',
       formReady: false,
       redirect: false
     })
@@ -27,11 +37,18 @@ export class ShuttleForm extends Component {
 
   handleChange = (e) => {
     this.setState({[e.target.name]: e.target.value})
-    if(this.state.name !== '' && this.state.email !== '') {
+    if(this.state.name !== '' && this.state.email !== '' && this.state.riders !== '' && this.state.bikes !== '' && this.state.date !== '' && this.state.starttime !== '' && this.state.endtime !== '') {
       this.setState({
         formReady: true
       })
     }
+  }
+
+  handleSubmit = (e) => {
+    const { makeBooking } = this.props
+    e.preventDefault()
+    makeBooking(this.state)
+    this.setRedirect()
   }
 
   setRedirect = () => {
@@ -64,10 +81,45 @@ export class ShuttleForm extends Component {
           value={this.state.email}
           onChange={this.handleChange}
         />
+        <input className="ShuttleForm-input"
+          name="riders"
+          type="number"
+          placeholder="Enter Number Of Riders"
+          value={this.state.riders}
+          onChange={this.handleChange}
+        />
+        <input className="ShuttleForm-input"
+          name="bikes"
+          type="number"
+          placeholder="Enter Number Of Bikes"
+          value={this.state.bikes}
+          onChange={this.handleChange}
+        />
+        <input className="ShuttleForm-input"
+          name="date"
+          type="number"
+          placeholder="Enter Date (mm/dd)"
+          value={this.state.date}
+          onChange={this.handleChange}
+        />
+        <input className="ShuttleForm-input"
+          name="starttime"
+          type="number"
+          placeholder="Enter Start Time (00:00 am/pm)"
+          value={this.state.starttime}
+          onChange={this.handleChange}
+        />
+        <input className="ShuttleForm-input"
+          name="endtime"
+          type="number"
+          placeholder="Enter End Time (00:00 am/pm)"
+          value={this.state.endtime}
+          onChange={this.handleChange}
+        />
         <p className="ShuttleForm-p">{this.state.formReady ? null : "PLEASE FILL OUT ALL INPUTS"}</p>
 
         {this.renderRedirect()}
-        <button disabled={this.state.formReady ? false : true} type="button" className="ShuttleForm-btn" onClick={this.setRedirect}>SUBMIT BOOKING</button>
+        <button disabled={this.state.formReady ? false : true} type="button" className="ShuttleForm-btn" onClick={this.handleSubmit}>SUBMIT BOOKING</button>
 
         <Link to='/trails' className="link"><h5>BACK TO TRAILS</h5></Link>
       </form>
