@@ -34,15 +34,6 @@ export class ShuttleForm extends Component {
     }
   }
 
-  handleClick = (e) => {
-    e.preventDefault()
-    const { makeBooking } = this.props
-    if (this.state.name !== '' && this.state.email !== '') {
-      makeBooking(this.state)
-      this.clearInputs()
-    }
-  }
-
   setRedirect = () => {
     this.setState({
       redirect: true
@@ -93,5 +84,3 @@ export const mapDispatchToProps = dispatch => (
 )
 
 export default connect(null, mapDispatchToProps)(ShuttleForm)
-
-// <Link to='/confirmation'><button disabled={this.state.formReady ? false : true} type="button" className="ShuttleForm-btn" onClick={this.handleClick}>SUBMIT BOOKING</button></Link>
