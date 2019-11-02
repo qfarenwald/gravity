@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { makeBooking } from '../../actions';
+import { Link } from 'react-router-dom';
 import './ShuttleForm.css';
 
 export class ShuttleForm extends Component {
@@ -36,6 +37,7 @@ export class ShuttleForm extends Component {
   render() {
     return (
       <form className="ShuttleForm">
+        <h3>BOOK YOUR SHUTTLE</h3>
         <input className="ShuttleForm-input"
           name="name"
           type="text"
@@ -51,6 +53,7 @@ export class ShuttleForm extends Component {
           onChange={this.handleChange}
         />
         <button type="button" className="ShuttleForm-btn" onClick={this.handleClick}>SUBMIT BOOKING</button>
+        <Link to='/trails' className="link"><h5>BACK TO TRAILS</h5></Link>
       </form>
     )
   }

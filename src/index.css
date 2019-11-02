@@ -30,3 +30,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+h3 {
+  color: #FFFFFF;
+  font-weight: lighter;
+  letter-spacing: 15px;
+}
+
+h5 {
+  color: #38B449;
+  font-weight: lighter;
+  letter-spacing: 10px;
+}
+
+h5:hover {
+  color: #33993D;
+}
+
+.link {
+  text-decoration: none;
+}

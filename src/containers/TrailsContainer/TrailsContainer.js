@@ -1,6 +1,7 @@
 import React from 'react';
 import { Trail } from '../Trail/Trail';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './TrailsContainer.css';
 
 const TrailsContainer = ({ trails }) => {
@@ -16,7 +17,9 @@ const TrailsContainer = ({ trails }) => {
 
   return (
     <div>
+      <h3>PICK YOUR TRAIL</h3>
       {trailsToDisplay}
+      <Link to='/' className="link"><h5>BACK TO LOCATIONS</h5></Link>
     </div>
   )
 }
