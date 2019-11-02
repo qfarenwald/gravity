@@ -13,9 +13,6 @@ body {
 body::after {
   content: "";
   background: url('./images/gravity_bkgd.png') no-repeat;
-  /* -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover; */
   background-size: cover;
   opacity: 0.25;
   top: 0;
