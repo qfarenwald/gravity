@@ -58,7 +58,7 @@ export class ShuttleForm extends Component {
           value={this.state.email}
           onChange={this.handleChange}
         />
-        <Link to={this.state.formReady ? "/confirmation" : "/shuttle"}><button type="button" className={this.state.formReady ? "ShuttleForm-btn" : "ShuttleForm-btn-disabled"} onClick={this.handleClick}>SUBMIT BOOKING</button></Link>
+        <Link to='/confirmation'><button disabled={this.state.formReady ? false : true} type="button" className="ShuttleForm-btn" onClick={this.handleClick}>SUBMIT BOOKING</button></Link>
         <Link to='/trails' className="link"><h5>BACK TO TRAILS</h5></Link>
       </form>
     )
@@ -74,3 +74,5 @@ export const mapDispatchToProps = dispatch => (
 )
 
 export default connect(null, mapDispatchToProps)(ShuttleForm)
+//
+// className={this.state.formReady ? "ShuttleForm-btn" : "ShuttleForm-btn:disabled"}

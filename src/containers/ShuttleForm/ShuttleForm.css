@@ -34,15 +34,8 @@
   cursor: pointer;
 }
 
-.ShuttleForm-btn-disabled {
-  cursor: not-allowed;
-  pointer-events: none;
+.ShuttleForm-btn:disabled {
   background-color: grey;
-  border: none;
-  border-radius: 25px;
-  font-size: 1rem;
-  letter-spacing: 5px;
-  padding: 20px;
-  margin-top: 50px;
-  width: 300px;
+  color: black;
+  cursor: not-allowed;
 }
