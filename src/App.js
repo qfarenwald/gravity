@@ -14,23 +14,18 @@ import './App.css';
 
 export class App extends Component {
 
-  async componentDidMount() {
+  getLatLon = async (lat, lon) => {
     const { getTrails } = this.props
-
-    try {
-      const trails = await fetchData('https://www.mtbproject.com/data/get-trails?lat=39.7392&lon=-104.9903&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a')
-      const cleanTrails = filteredTrailData(trails.trails)
-      getTrails(cleanTrails)
-    } catch {
-      console.log('error')
-    }
+    const trails = await fetchData(`https://www.mtbproject.com/data/get-trails?lat=${lat}&lon=-${lon}&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a`)
+    const cleanTrails = filteredTrailData(trails.trails)
+    getTrails(cleanTrails)
   }
 
   render() {
     return (
       <div className="App">
         <Route path='/' render={() => <Header />} />
-        <Route exact path='/' render={() => <Location />} />
+        <Route exact path='/' render={() => <Location getLatLon={this.getLatLon}/>} />
         <Route exact path='/trails' render={() => <TrailsContainer />} />
         <Route exact path='/shuttle' render={() => <ShuttleForm />} />
         <Route exact path='/confirmation' render={() => <Modal />} />
