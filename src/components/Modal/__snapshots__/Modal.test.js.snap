@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal should match snapshot 1`] = `
+<section
+  className="Modal"
+>
+  <h3>
+    YOUR SHUTTLE IS BOOKED
+  </h3>
+  <h3>
+    A CONFIRMATION EMAIL HAS BEEN SENT
+  </h3>
+  <h3>
+    GET READY TO DROP IN!
+  </h3>
+  <Link
+    className="link"
+    to="/trails"
+  >
+    <h5>
+      BACK TO TRAILS
+    </h5>
+  </Link>
+</section>
+`;
