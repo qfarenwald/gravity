@@ -7,6 +7,7 @@
   height: 50px;
   justify-content: center;
   margin: 15px;
+  width: 80%;
 }
 
 .Trail-p {
@@ -15,12 +16,13 @@
   margin: 0;
 }
 
+.descent,
 .stars {
   width: 20%
 }
 
 .name {
-  width: 80%
+  width: 60%
 }
 
 .Trail-btn {
