@@ -109,53 +109,53 @@ describe('ShuttleForm', () => {
     expect(wrapper.state('endtime')).toEqual(inputEvent.target.value);
   })
 
-  // it('should set state of redirect when setRedirect is called with a click event', () => {
-  //   const wrapper = shallow(<ShuttleForm />)
-  //   const clickEvent = {
-  //     preventDefault: jest.fn(),
-  //     target: {
-  //       name: "redirect",
-  //       value: "true"
-  //     }
-  //   }
-  //
-  //   wrapper.instance().handleSubmit(clickEvent);
-  //
-  //   expect(wrapper.state('redirect')).toEqual(inputEvent.target.value);
-  // })
+  it.skip('should set state of redirect when setRedirect is called with a click event', () => {
+    const wrapper = shallow(<ShuttleForm />)
+    const clickEvent = {
+      preventDefault: jest.fn(),
+      target: {
+        name: "redirect",
+        value: "true"
+      }
+    }
 
-  // it('should call handleSubmit when the login button is clicked', () => {
-  //   const wrapper = shallow(<ShuttleForm />)
-  //   const mockEvent = { preventDefault: jest.fn() };
-  //   wrapper.instance().handleSubmit = jest.fn();
-  //   wrapper.instance().makeBooking = jest.fn();
-  //
-  //   wrapper.find('button').simulate('click', mockEvent);
-  //
-  //   expect(wrapper.instance().handleSubmit).toHaveBeenCalled();
-  // });
+    wrapper.instance().handleSubmit(clickEvent);
+
+    expect(wrapper.state('redirect')).toEqual(inputEvent.target.value);
+  })
+
+  it.skip('should call handleSubmit when the login button is clicked', () => {
+    const wrapper = shallow(<ShuttleForm />)
+    const mockEvent = { preventDefault: jest.fn() };
+    wrapper.instance().handleSubmit = jest.fn();
+    wrapper.instance().makeBooking = jest.fn();
+
+    wrapper.find('button').simulate('click', mockEvent);
+
+    expect(wrapper.instance().handleSubmit).toHaveBeenCalled();
+  });
 
 })
 
-// describe('mapDispatchToProps', () => {
-//   it('calls dispatch with an makeBooking action when handleSubmit is called', () => {
-//     const mockDispatch = jest.fn();
-//     const mockResponse = {
-//       name: "Dan LeFever",
-//       email: "dt.lefever@gmail.com",
-//       riders: "5",
-//       bikes: "5",
-//       date: "1106",
-//       starttime: "1100",
-//       endtime: "430",
-//       formReady: true,
-//       redirect:false
-//     }
-//     const actionToDispatch = makeBooking(mockResponse);
-//     const mappedProps = mapDispatchToProps(mockDispatch);
-//
-//     mappedProps.makeBooking(mockResponse);
-//
-//     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
-//   });
-// });
+describe('mapDispatchToProps', () => {
+  it('calls dispatch with an makeBooking action when handleSubmit is called', () => {
+    const mockDispatch = jest.fn();
+    const mockBooking = {
+      name: "Dan LeFever",
+      email: "dt.lefever@gmail.com",
+      riders: "5",
+      bikes: "5",
+      date: "1106",
+      starttime: "1100",
+      endtime: "430",
+      formReady: true,
+      redirect:false
+    }
+    const actionToDispatch = makeBooking('MAKE_BOOKING', mockBooking);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+
+    mappedProps.makeBooking('MAKE_BOOKING', mockBooking);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+});
