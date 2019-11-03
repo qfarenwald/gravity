@@ -137,25 +137,25 @@ describe('ShuttleForm', () => {
 
 })
 
-// describe('mapDispatchToProps', () => {
-//   it('calls dispatch with an makeBooking action when handleSubmit is called', () => {
-//     const mockDispatch = jest.fn();
-//     const mockResponse = {
-//       name: "Dan LeFever",
-//       email: "dt.lefever@gmail.com",
-//       riders: "5",
-//       bikes: "5",
-//       date: "1106",
-//       starttime: "1100",
-//       endtime: "430",
-//       formReady: true,
-//       redirect:false
-//     }
-//     const actionToDispatch = makeBooking(mockResponse);
-//     const mappedProps = mapDispatchToProps(mockDispatch);
-//
-//     mappedProps.makeBooking(mockResponse);
-//
-//     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
-//   });
-// });
+describe('mapDispatchToProps', () => {
+  it('calls dispatch with an makeBooking action when handleSubmit is called', () => {
+    const mockDispatch = jest.fn();
+    const mockBooking = {
+      name: "Dan LeFever",
+      email: "dt.lefever@gmail.com",
+      riders: "5",
+      bikes: "5",
+      date: "1106",
+      starttime: "1100",
+      endtime: "430",
+      formReady: true,
+      redirect:false
+    }
+    const actionToDispatch = makeBooking('MAKE_BOOKING', mockBooking);
+    const mappedProps = mapDispatchToProps(mockDispatch);
+
+    mappedProps.makeBooking('MAKE_BOOKING', mockBooking);
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+});
