@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './TrailsContainer.css';
 
-const TrailsContainer = ({ trails }) => {
+export const TrailsContainer = ({ trails }) => {
 
   const trailsToDisplay = trails.map((trail) => {
     return <Trail

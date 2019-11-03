@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot 1`] = `
+<header
+  className="Header"
+>
+  <Link
+    to="/"
+  >
+    <img
+      alt="Gravity logo"
+      className="Header-img"
+      src="gravity_logo.svg"
+    />
+  </Link>
+  <h2
+    className="Header-h2"
+  >
+    SHUTTLE SERVICE
+  </h2>
+</header>
+`;

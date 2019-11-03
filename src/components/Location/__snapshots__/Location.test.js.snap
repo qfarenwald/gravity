@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Location should match snapshot 1`] = `
+<section
+  className="Location"
+>
+  <h3>
+    CHOOSE A LOCATION
+  </h3>
+  <Link
+    onClick={[Function]}
+    to="/trails"
+  >
+    <button
+      className="Location-btn"
+    >
+      DENVER
+    </button>
+  </Link>
+  <Link
+    onClick={[Function]}
+    to="/trails"
+  >
+    <button
+      className="Location-btn"
+    >
+      BOULDER
+    </button>
+  </Link>
+</section>
+`;

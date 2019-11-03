@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trail should match snapshot 1`] = `
+<section
+  className="Trail"
+  id="trail"
+>
+  <p
+    className="Trail-p stars"
+  >
+     Stars
+  </p>
+  <p
+    className="Trail-p name"
+  />
+  <p
+    className="Trail-p descent"
+  >
+     ft Descent
+  </p>
+  <Link
+    to="/shuttle"
+  >
+    <button
+      className="Trail-btn"
+    >
+      BOOK
+    </button>
+  </Link>
+</section>
+`;

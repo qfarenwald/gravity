@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShuttleForm should match snapshot 1`] = `
+<form
+  className="ShuttleForm"
+>
+  <h3>
+    BOOK YOUR SHUTTLE
+  </h3>
+  <input
+    className="ShuttleForm-input"
+    name="name"
+    onChange={[Function]}
+    placeholder="Enter Name"
+    type="text"
+    value=""
+  />
+  <input
+    className="ShuttleForm-input"
+    name="email"
+    onChange={[Function]}
+    placeholder="Enter Email"
+    type="text"
+    value=""
+  />
+  <input
+    className="ShuttleForm-input"
+    name="riders"
+    onChange={[Function]}
+    placeholder="Enter Number Of Riders"
+    type="number"
+    value=""
+  />
+  <input
+    className="ShuttleForm-input"
+    name="bikes"
+    onChange={[Function]}
+    placeholder="Enter Number Of Bikes"
+    type="number"
+    value=""
+  />
+  <input
+    className="ShuttleForm-input"
+    name="date"
+    onChange={[Function]}
+    placeholder="Enter Date (mm/dd)"
+    type="number"
+    value=""
+  />
+  <input
+    className="ShuttleForm-input"
+    name="starttime"
+    onChange={[Function]}
+    placeholder="Enter Start Time (00:00 am/pm)"
+    type="number"
+    value=""
+  />
+  <input
+    className="ShuttleForm-input"
+    name="endtime"
+    onChange={[Function]}
+    placeholder="Enter End Time (00:00 am/pm)"
+    type="number"
+    value=""
+  />
+  <p
+    className="ShuttleForm-p"
+  >
+    PLEASE FILL OUT ALL INPUTS
+  </p>
+  <button
+    className="ShuttleForm-btn"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    SUBMIT BOOKING
+  </button>
+  <Link
+    className="link"
+    to="/trails"
+  >
+    <h5>
+      BACK TO TRAILS
+    </h5>
+  </Link>
+</form>
+`;
