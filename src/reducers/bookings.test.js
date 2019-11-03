@@ -9,7 +9,7 @@ describe('bookings', () => {
     expect(result).toEqual(expected);
   });
 
-  it('add booking to state', () => {
+  it('should add booking to state', () => {
     const initialState = [];
     const mockNewBooking = {
       name: "Quinne Farenwald",
