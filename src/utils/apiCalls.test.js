@@ -34,7 +34,6 @@ describe('fetchData', () => {
         json: () => Promise.resolve(mockResponse)
       });
     });
-
   });
 
   it('should fetch with the correct url', () => {
