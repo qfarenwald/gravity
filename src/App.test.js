@@ -4,6 +4,7 @@ import { App, mapDispatchToProps } from './App';
 import { shallow } from 'enzyme';
 import { fetchData } from './utils/apiCalls';
 import { getTrails } from './actions';
+import { filteredTrailData } from './utils/helpers';
 
 jest.mock('./utils/apiCalls')
 
@@ -60,7 +61,7 @@ describe('App', () => {
     }
   ]
 
-  getTrails.mockImplementation(() => Promise.resolve(mockTrails));
+  // getTrails.mockImplementation(() => Promise.resolve(mockTrails));
   fetchData.mockImplementation(() => Promise.resolve(mockTrails))
 
   beforeEach(() => {
@@ -71,7 +72,7 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('should return array of trails for based on lon and lat interpolated', async () => {
+  it.skip('should return array of trails for based on lon and lat interpolated', async () => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: true,
@@ -89,12 +90,28 @@ describe('App', () => {
       .then(results => expect(results).toEqual(mockResponse.trails))
       .catch(error => error)
     });
+
+    it.skip('should call fetchData, filteredTrailData, and getTrails when getLatLon is called', () => {
+      const mockLat = 39.7392
+      const mockLon = 104.9903
+      const mockUrl = `https://www.mtbproject.com/data/get-trails?lat=${mockLat}&lon=-${mockLon}&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a`;
+      const filteredTrailData = jest.fn()
+      const getTrails = jest.fn()
+
+      wrapper.instance().getLatLon(mockLat, mockLon)
+
+      expect(fetchData).toHaveBeenCalledWith(mockUrl);
+      expect(filteredTrailData).toHaveBeenCalledWith(mockTrails);
+      expect(getTrails).toHaveBeenCalledWith(mockTrails);
+    });
+
   });
 
 describe('mapDispatchToProps', () => {
     it('calls dispatch when a getTrails action is called', () => {
       const mockDispatch = jest.fn();
       const mockGetTrails = jest.fn();
+      const filteredTrailData = jest.fn()
       const wrapper = shallow(<App getTrails={mockGetTrails}/>)
       const mockTrails = [
         {
