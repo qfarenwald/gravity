@@ -25,6 +25,8 @@ describe('fetchData', () => {
     }]
   };
 
+  const mockUrl = 'https://www.mtbproject.com/data/get-trails?lat=39.7392&lon=-104.9903&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a'
+
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
@@ -32,14 +34,32 @@ describe('fetchData', () => {
         json: () => Promise.resolve(mockResponse)
       });
     });
+
   });
 
   it('should fetch with the correct url', () => {
-    const mockUrl = 'https://www.mtbproject.com/data/get-trails?lat=39.7392&lon=-104.9903&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a'
-
     fetchData(mockUrl);
 
     expect(window.fetch).toHaveBeenCalledWith(mockUrl);
+  });
+
+  it('should return an array of trails (HAPPY)', () => {
+    fetchData(mockUrl)
+
+    .then(results => expect(results).toEqual(mockResponse));
+  });
+
+  it('should return an error (SAD)', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false,
+        statusText: "Invalid API key: You must be granted a valid key."
+      })
+    });
+
+    const mockUrl = 'https://www.mtbproject.com/data/get-trails?lat=39.7392&lon=-104.9903&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a'
+
+    expect(fetchData(mockUrl)).rejects.toEqual(Error("Invalid API key: You must be granted a valid key."));
   });
 
 });
