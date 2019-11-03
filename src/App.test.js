@@ -60,6 +60,7 @@ describe('App', () => {
     }
   ]
 
+  getTrails.mockImplementation(() => Promise.resolve(mockTrails));
   fetchData.mockImplementation(() => Promise.resolve(mockTrails))
 
   beforeEach(() => {
@@ -117,9 +118,7 @@ describe('mapDispatchToProps', () => {
           conditionStatus: "All Clear"
         }
       ]
-
       const actionToDispatch = getTrails('GET_TRAILS', mockTrails);
-
       const mappedProps = mapDispatchToProps(mockDispatch);
 
       mappedProps.getTrails('GET_TRAILS', mockTrails);
