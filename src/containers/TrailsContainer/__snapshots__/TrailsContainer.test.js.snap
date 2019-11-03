@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TrailsContainer should match snapshot 1`] = `
+<div
+  className="TrailsContainer"
+>
+  <h3>
+    PICK YOUR TRAIL
+  </h3>
+  <Trail
+    conditionDate="2019-10-03 22:57:25"
+    conditionStatus="All Clear"
+    descent={-829}
+    difficulty="greenBlue"
+    id={46286}
+    key="46286"
+    name="Betasso Preserve"
+    stars={4}
+  />
+  <Trail
+    conditionDate="2019-09-19 07:48:20"
+    conditionStatus="All Clear"
+    descent={-1510}
+    difficulty="blueBlack"
+    id={601365}
+    key="601365"
+    name="Walker Ranch"
+    stars={3.9}
+  />
+  <Link
+    className="link"
+    to="/"
+  >
+    <h5>
+      BACK TO LOCATIONS
+    </h5>
+  </Link>
+</div>
+`;
