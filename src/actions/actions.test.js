@@ -57,4 +57,39 @@ describe('actions', () => {
       expect(result).toEqual(expectedAction);
     });
   });
+
+  describe('makeBooking', () => {
+    it('should have a type of MAKE_BOOKING', () => {
+      const booking = {
+        name: "Dan LeFever",
+        email: "dt.lefever@gmail.com",
+        riders: "5",
+        bikes: "5",
+        date: "1106",
+        starttime: "1100",
+        endtime: "430",
+        formReady: true,
+        redirect:false
+      }
+      const expectedAction = {
+        type: 'MAKE_BOOKING',
+        booking: {
+            name: "Dan LeFever",
+            email: "dt.lefever@gmail.com",
+            riders: "5",
+            bikes: "5",
+            date: "1106",
+            starttime: "1100",
+            endtime: "430",
+            formReady: true,
+            redirect:false
+          }
+      }
+
+      const result = actions.makeBooking(booking);
+
+      expect(result).toEqual(expectedAction);
+    });
+  });
+
 });
