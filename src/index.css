@@ -28,6 +28,11 @@ code {
     monospace;
 }
 
+h2 {
+  color: #FFFFFF;
+  letter-spacing: 15px;
+}
+
 h3 {
   color: #FFFFFF;
   font-weight: lighter;

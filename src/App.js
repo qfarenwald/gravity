@@ -27,7 +27,7 @@ export class App extends Component {
         <Route path="/" render={() => <Header />} />
         <Route exact path="/" render={() => <Location getLatLon={this.getLatLon} />} />
         <Route exact path="/trails" render={() => <TrailsContainer />} />
-        <Route exact path="/shuttle" render={() => <ShuttleForm />} />
+        <Route exact path="/shuttle/:trail" render={(match) => <ShuttleForm match={match}/>} />
         <Route exact path="/confirmation" render={() => <Modal />} />
       </div>
     );
