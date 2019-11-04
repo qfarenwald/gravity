@@ -29,10 +29,29 @@ Design Prototype
 
 ![Design Prototype](src/images/gravity_initial-design.png)
 
-Homepage
-- A user can...
+Choose Your Location
+- When arriving at the site, the first thing a user needs to do is pick a location.
 
-![Homepage](src/images/.png)
+![Homepage](src/images/gravity_home-page.png)
+
+Choose Your Trail
+- Trails will appear within 10 miles of the selected location from which a user can choose from to book a shuttle.
+
+![Trail Page](src/images/gravity_trail-page.png)
+
+Book Your Shuttle
+- Now that a trail is selected and the user decides that is the trail they wish to hire a shuttle for, they will fill out the form with the necessary information.
+
+![Shuttle Page Error](src/images/gravity_shuttle-page-error.png)
+
+- Be sure to fill out all inputs or else the booking will not be made.
+
+![Shuttle Page](src/images/gravity_shuttle-page.png)
+
+Receive Confirmation
+- Once all inputs are fill out, the booking is allowed to be made and when done so, the user will receive a confirmation message.
+
+![Confirmation Page](src/images/gravity_confirmation-page.png)
 
 ### Tech
 
