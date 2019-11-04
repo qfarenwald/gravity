@@ -13,7 +13,6 @@ import TrailsContainer from './containers/TrailsContainer/TrailsContainer';
 import './App.css';
 
 export class App extends Component {
-
   getLatLon = async (lat, lon) => {
     const { getTrails } = this.props
     const trails = await fetchData(`https://www.mtbproject.com/data/get-trails?lat=${lat}&lon=-${lon}&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a`);

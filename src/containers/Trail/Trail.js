@@ -2,17 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Trail.css';
 
-export const Trail = ({ name, stars, descent }) =>
-
-// const dropdown = () => {
-//   var trail = document.getElementById('trail');
-//   trail.insertAdjacentHTML('afterend',
-//   `<section className="Trail-dropdown">
-//     <p className="dropdown">${stars} Stars</p>
-//   </section>`);
-// }
-
-  (
+export const Trail = ({ name, stars, descent }) => (
     <section className="Trail" id="trail">
       <p className="Trail-p stars">{stars} Stars</p>
       <p className="Trail-p name">{name}</p>
@@ -20,6 +10,3 @@ export const Trail = ({ name, stars, descent }) =>
       <Link to={`/shuttle/${name}`}><button className="Trail-btn" id={name}>BOOK</button></Link>
     </section>
   );
-
-
-// <p className="Trail-p info" onClick={dropdown}>MORE INFO</p>
