@@ -39,6 +39,10 @@ Choose Your Trail
 
 ![Trail Page](src/images/gravity_trail-page.png)
 
+- If the data can not be fetched, an error will appear for the user.
+
+![Trail Page Error](src/images/gravity_trail-page-error.png)
+
 Book Your Shuttle
 - Now that a trail is selected and the user decides that is the trail they wish to hire a shuttle for, they will fill out the form with the necessary information.
 
