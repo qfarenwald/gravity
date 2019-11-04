@@ -55,4 +55,13 @@ describe('fetchData', () => {
 
     expect(fetchData(mockUrl)).rejects.toEqual(Error('Invalid API key: You must be granted a valid key.'));
   });
+
+  it('should return an error if the server is down', () => {
+    window.fetch = jest.fn().mockImplementation(() => ({
+      status: 500
+    }))
+
+    expect(fetchData()).rejects.toEqual(Error());
+  });
+
 });
