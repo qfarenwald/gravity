@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Redirect, Link } from 'react-router-dom';
 import { makeBooking } from '../../actions';
 import './ShuttleForm.css';
+import PropTypes from 'prop-types';
 
 export class ShuttleForm extends Component {
   constructor() {
@@ -131,3 +132,7 @@ export const mapDispatchToProps = (dispatch) => (
 );
 
 export default connect(null, mapDispatchToProps)(ShuttleForm);
+
+ShuttleForm.propTypes = {
+  makeBooking: PropTypes.func.isRequired,
+}
