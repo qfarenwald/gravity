@@ -72,17 +72,11 @@ describe('App', () => {
   });
 
   it('should return array of trails for based on lon and lat interpolated', async () => {
-    // window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-    //   ok: true,
-    //   json: () => Promise.resolve(mockResponse),
-    // }));
     const mockLat = 39.7392;
     const mockLon = 104.9903;
     const mockUrl = `https://www.mtbproject.com/data/get-trails?lat=${mockLat}&lon=-${mockLon}&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a`;
 
     await wrapper.instance().getLatLon(mockLat, mockLon);
-
-    console.log('hello', trails)
 
     expect(trails).toEqual(mockTrails)
   });
