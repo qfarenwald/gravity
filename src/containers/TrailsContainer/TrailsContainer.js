@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Trail } from '../Trail/Trail';
 import './TrailsContainer.css';
 
-export const TrailsContainer = ({ trails, match }) => {
+export const TrailsContainer = ({ trails, match, error }) => {
   const trailsToDisplay = trails.map((trail) => (
     <Trail
       key={trail.id}
@@ -23,6 +23,7 @@ export const TrailsContainer = ({ trails, match }) => {
       <h2>{match.location.pathname.split('/')[2].toUpperCase()}</h2>
       <h3>PICK YOUR TRAIL</h3>
       {trailsToDisplay}
+      <h3 className="error-p">{error}</h3>
       <Link to="/" className="link"><h5>BACK TO LOCATIONS</h5></Link>
     </div>
   );

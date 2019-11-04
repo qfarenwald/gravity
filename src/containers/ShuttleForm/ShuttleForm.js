@@ -110,12 +110,12 @@ export class ShuttleForm extends Component {
           value={this.state.endtime}
           onChange={this.handleChange}
         />
-        <p className={this.state.formReady ? 'ShuttleForm-p-hidden' : 'ShuttleForm-p'}>PLEASE FILL OUT ALL INPUTS</p>
+        <p className={this.state.formReady ? 'error-p-hidden' : 'error-p'}>PLEASE FILL OUT ALL INPUTS</p>
 
         {this.renderRedirect()}
         <button disabled={!this.state.formReady} type="button" className="ShuttleForm-btn" onClick={this.handleSubmit}>SUBMIT BOOKING</button>
 
-        <Link to="/trails" className="link"><h5>BACK TO TRAILS</h5></Link>
+        <Link to="/" className="link"><h5>BACK TO LOCATIONS</h5></Link>
       </form>
     );
   }
