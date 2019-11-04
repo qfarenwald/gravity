@@ -4,8 +4,14 @@ import { shallow } from 'enzyme';
 import { TrailsContainer } from './TrailsContainer';
 
 describe('TrailsContainer', () => {
+  const mockMatch = {
+    location: {
+      pathname: "/hello/hey/hi"
+    }
+  }
+
   it('should match snapshot', () => {
-    const wrapper = shallow(<TrailsContainer trails={[
+    const wrapper = shallow(<TrailsContainer match={mockMatch} trails={[
       {
         key: 46286,
         id: 46286,

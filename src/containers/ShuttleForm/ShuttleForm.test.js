@@ -5,14 +5,20 @@ import { ShuttleForm, mapDispatchToProps, mapStateToProps } from './ShuttleForm'
 import { makeBooking } from '../../actions/index';
 
 describe('ShuttleForm', () => {
+  const mockMatch = {
+    location: {
+      pathname: "/hello/hey/hi"
+    }
+  }
+
   it('should match snapshot', () => {
-    const wrapper = shallow(<ShuttleForm />);
+    const wrapper = shallow(<ShuttleForm match={mockMatch}/>);
 
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should set state of name when handleChange is called with an input event', () => {
-    const wrapper = shallow(<ShuttleForm />);
+    const wrapper = shallow(<ShuttleForm match={mockMatch}/>);
     const inputEvent = {
       target: {
         name: 'name',
@@ -26,7 +32,7 @@ describe('ShuttleForm', () => {
   });
 
   it('should set state of email when handleChange is called with an input event', () => {
-    const wrapper = shallow(<ShuttleForm />);
+    const wrapper = shallow(<ShuttleForm match={mockMatch}/>);
     const inputEvent = {
       target: {
         name: 'email',
@@ -40,7 +46,7 @@ describe('ShuttleForm', () => {
   });
 
   it('should set state of riders when handleChange is called with an input event', () => {
-    const wrapper = shallow(<ShuttleForm />);
+    const wrapper = shallow(<ShuttleForm match={mockMatch}/>);
     const inputEvent = {
       target: {
         name: 'riders',
@@ -54,7 +60,7 @@ describe('ShuttleForm', () => {
   });
 
   it('should set state of bikes when handleChange is called with an input event', () => {
-    const wrapper = shallow(<ShuttleForm />);
+    const wrapper = shallow(<ShuttleForm match={mockMatch}/>);
     const inputEvent = {
       target: {
         name: 'bikes',
@@ -68,7 +74,7 @@ describe('ShuttleForm', () => {
   });
 
   it('should set state of date when handleChange is called with an input event', () => {
-    const wrapper = shallow(<ShuttleForm />);
+    const wrapper = shallow(<ShuttleForm match={mockMatch}/>);
     const inputEvent = {
       target: {
         name: 'date',
@@ -82,7 +88,7 @@ describe('ShuttleForm', () => {
   });
 
   it('should set state of start time when handleChange is called with an input event', () => {
-    const wrapper = shallow(<ShuttleForm />);
+    const wrapper = shallow(<ShuttleForm match={mockMatch}/>);
     const inputEvent = {
       target: {
         name: 'starttime',
@@ -96,7 +102,7 @@ describe('ShuttleForm', () => {
   });
 
   it('should set state of end time when handleChange is called with an input event', () => {
-    const wrapper = shallow(<ShuttleForm />);
+    const wrapper = shallow(<ShuttleForm match={mockMatch}/>);
     const inputEvent = {
       target: {
         name: 'endtime',
@@ -110,7 +116,7 @@ describe('ShuttleForm', () => {
   });
 
   it('should set state of redirect when setRedirect is called with a click event', () => {
-    const wrapper = shallow(<ShuttleForm makeBooking={makeBooking}/>);
+    const wrapper = shallow(<ShuttleForm makeBooking={makeBooking} match={mockMatch}/>);
     const clickEvent = {
       preventDefault: jest.fn(),
       target: {
@@ -125,7 +131,7 @@ describe('ShuttleForm', () => {
   });
 
   it('should call handleSubmit when the button is clicked', () => {
-    const wrapper = shallow(<ShuttleForm makeBooking={makeBooking}/>);
+    const wrapper = shallow(<ShuttleForm makeBooking={makeBooking} match={mockMatch}/>);
     const mockEvent = { preventDefault: jest.fn() };
     wrapper.instance().handleSubmit = jest.fn();
     wrapper.instance().makeBooking = jest.fn();

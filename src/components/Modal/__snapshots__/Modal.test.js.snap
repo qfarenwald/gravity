@@ -15,10 +15,10 @@ exports[`Modal should match snapshot 1`] = `
   </h3>
   <Link
     className="link"
-    to="/trails"
+    to="/"
   >
     <h5>
-      BACK TO TRAILS
+      BACK TO LOCATIONS
     </h5>
   </Link>
 </section>

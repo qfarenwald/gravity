@@ -4,6 +4,9 @@ exports[`ShuttleForm should match snapshot 1`] = `
 <form
   className="ShuttleForm"
 >
+  <h2>
+    HEY
+  </h2>
   <h3>
     BOOK YOUR SHUTTLE
   </h3>
@@ -64,7 +67,7 @@ exports[`ShuttleForm should match snapshot 1`] = `
     value=""
   />
   <p
-    className="ShuttleForm-p"
+    className="error-p"
   >
     PLEASE FILL OUT ALL INPUTS
   </p>
@@ -78,10 +81,10 @@ exports[`ShuttleForm should match snapshot 1`] = `
   </button>
   <Link
     className="link"
-    to="/trails"
+    to="/"
   >
     <h5>
-      BACK TO TRAILS
+      BACK TO LOCATIONS
     </h5>
   </Link>
 </form>
