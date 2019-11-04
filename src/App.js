@@ -13,11 +13,22 @@ import TrailsContainer from './containers/TrailsContainer/TrailsContainer';
 import './App.css';
 
 export class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      error: ''
+    }
+  }
+
   getLatLon = async (lat, lon) => {
     const { getTrails } = this.props
-    const trails = await fetchData(`https://www.mtbproject.com/data/get-trails?lat=${lat}&lon=-${lon}&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a`);
-    const cleanTrails = filteredTrailData(trails.trails);
-    getTrails(cleanTrails);
+    try {
+      const trails = await fetchData(`https://www.mtbproject.com/data/get-trails?lat=${lat}&lon=-${lon}&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a`);
+      const cleanTrails = filteredTrailData(trails.trails);
+      getTrails(cleanTrails);
+    } catch {
+      this.setState({ error: 'THE TRAIL DATA MUST BE OUT RIDING, PLEASE TRY AGAIN LATER.'})
+    }
   }
 
   render() {
@@ -25,7 +36,7 @@ export class App extends Component {
       <div className="App">
         <Route path="/" render={() => <Header />} />
         <Route exact path="/" render={() => <Location getLatLon={this.getLatLon} />} />
-        <Route exact path="/trails/:location" render={(match) => <TrailsContainer match={match}/>} />
+        <Route exact path="/trails/:location" render={(match) => <TrailsContainer match={match} error={this.state.error} />} />
         <Route exact path="/shuttle/:trail" render={(match) => <ShuttleForm match={match}/>} />
         <Route exact path="/confirmation" render={() => <Modal />} />
       </div>

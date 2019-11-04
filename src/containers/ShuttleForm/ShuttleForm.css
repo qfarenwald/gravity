@@ -40,13 +40,13 @@
   cursor: not-allowed;
 }
 
-.ShuttleForm-p {
+.error-p {
   color: red;
   font-size: .75rem;
   letter-spacing: 5px;
 }
 
-.ShuttleForm-p-hidden {
+.error-p-hidden {
   color: black;
   font-size: .75rem;
   letter-spacing: 5px;
