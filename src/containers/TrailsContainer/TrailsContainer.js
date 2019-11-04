@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Trail } from '../Trail/Trail';
 import './TrailsContainer.css';
+import PropTypes from 'prop-types';
+
 
 export const TrailsContainer = ({ trails, match, error }) => {
   const trailsToDisplay = trails.map((trail) => (
@@ -34,3 +36,9 @@ export const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps)(TrailsContainer);
+
+TrailsContainer.propTypes = {
+  trails: PropTypes.array.isRequired,
+  match: PropTypes.object.isRequired,
+  error: PropTypes.string.isRequired,
+}

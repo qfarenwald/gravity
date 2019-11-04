@@ -11,6 +11,7 @@ import { Modal } from './components/Modal/Modal';
 import ShuttleForm from './containers/ShuttleForm/ShuttleForm';
 import TrailsContainer from './containers/TrailsContainer/TrailsContainer';
 import './App.css';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
   constructor() {
@@ -54,3 +55,7 @@ export const mapDispatchToProps = (dispatch) => (
 );
 
 export default connect(null, mapDispatchToProps)(App);
+
+App.propTypes = {
+  getTrails: PropTypes.func.isRequired,
+}
