@@ -52,7 +52,7 @@ export class ShuttleForm extends Component {
   render() {
     return (
       <form className="ShuttleForm">
-        <h2>{this.props.match.location.pathname.split('/')[2]}</h2>
+        <h2>{this.props.match.location.pathname.split('/')[2].toUpperCase()}</h2>
         <h3>BOOK YOUR SHUTTLE</h3>
         <input
           className="ShuttleForm-input"
