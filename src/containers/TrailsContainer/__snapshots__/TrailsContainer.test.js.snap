@@ -4,6 +4,9 @@ exports[`TrailsContainer should match snapshot 1`] = `
 <div
   className="TrailsContainer"
 >
+  <h2>
+    HEY
+  </h2>
   <h3>
     PICK YOUR TRAIL
   </h3>
@@ -26,6 +29,9 @@ exports[`TrailsContainer should match snapshot 1`] = `
     key="601365"
     name="Walker Ranch"
     stars={3.9}
+  />
+  <h3
+    className="error-p"
   />
   <Link
     className="link"

@@ -15,12 +15,12 @@ exports[`App should match snapshot 1`] = `
   />
   <Route
     exact={true}
-    path="/trails"
+    path="/trails/:location"
     render={[Function]}
   />
   <Route
     exact={true}
-    path="/shuttle"
+    path="/shuttle/:trail"
     render={[Function]}
   />
   <Route

@@ -8,8 +8,7 @@ exports[`Trail should match snapshot 1`] = `
   <p
     className="Trail-p stars"
   >
-     
-    Stars
+     Stars
   </p>
   <p
     className="Trail-p name"
@@ -17,11 +16,10 @@ exports[`Trail should match snapshot 1`] = `
   <p
     className="Trail-p descent"
   >
-     
-    ft Descent
+     ft Descent
   </p>
   <Link
-    to="/shuttle"
+    to="/shuttle/undefined"
   >
     <button
       className="Trail-btn"

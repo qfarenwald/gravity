@@ -8,7 +8,7 @@ exports[`Location should match snapshot 1`] = `
     CHOOSE A LOCATION
   </h3>
   <Link
-    to="/trails"
+    to="/trails/denver"
   >
     <button
       className="Location-btn"
@@ -18,7 +18,7 @@ exports[`Location should match snapshot 1`] = `
     </button>
   </Link>
   <Link
-    to="/trails"
+    to="/trails/boulder"
   >
     <button
       className="Location-btn"
