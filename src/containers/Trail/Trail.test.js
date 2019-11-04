@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Trail } from './Trail';
 import { shallow } from 'enzyme';
+import { Trail } from './Trail';
 
 describe('Trail', () => {
   it('should match snapshot', () => {
-    const wrapper = shallow(<Trail />)
+    const wrapper = shallow(<Trail />);
 
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+    expect(wrapper).toMatchSnapshot();
+  });
+});

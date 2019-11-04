@@ -1,146 +1,142 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { App, mapDispatchToProps } from './App';
 import { shallow } from 'enzyme';
+import { App, mapDispatchToProps } from './App';
 import { fetchData } from './utils/apiCalls';
 import { getTrails } from './actions';
 import { filteredTrailData } from './utils/helpers';
 
-jest.mock('./utils/apiCalls')
+jest.mock('./utils/apiCalls');
 
 describe('App', () => {
   let wrapper;
 
   const mockGetTrails = jest.fn();
 
-  let mockResponse = {
-    "trails": [
+  const mockResponse = {
+    trails: [
       {
         key: 46286,
         id: 46286,
-        name: "Betasso Preserve",
+        name: 'Betasso Preserve',
         stars: 4,
-        difficulty: "greenBlue",
+        difficulty: 'greenBlue',
         descent: -829,
-        conditionDate: "2019-10-03 22:57:25",
-        conditionStatus: "All Clear"
+        conditionDate: '2019-10-03 22:57:25',
+        conditionStatus: 'All Clear',
       },
       {
         key: 601365,
         id: 601365,
-        name: "Walker Ranch",
+        name: 'Walker Ranch',
         stars: 3.9,
-        difficulty: "blueBlack",
+        difficulty: 'blueBlack',
         descent: -1510,
-        conditionDate: "2019-09-19 07:48:20",
-        conditionStatus: "All Clear"
-      }
-    ]
-  }
+        conditionDate: '2019-09-19 07:48:20',
+        conditionStatus: 'All Clear',
+      },
+    ],
+  };
 
   const mockTrails = [
     {
       key: 46286,
       id: 46286,
-      name: "Betasso Preserve",
+      name: 'Betasso Preserve',
       stars: 4,
-      difficulty: "greenBlue",
+      difficulty: 'greenBlue',
       descent: -829,
-      conditionDate: "2019-10-03 22:57:25",
-      conditionStatus: "All Clear"
+      conditionDate: '2019-10-03 22:57:25',
+      conditionStatus: 'All Clear',
     },
     {
       key: 601365,
       id: 601365,
-      name: "Walker Ranch",
+      name: 'Walker Ranch',
       stars: 3.9,
-      difficulty: "blueBlack",
+      difficulty: 'blueBlack',
       descent: -1510,
-      conditionDate: "2019-09-19 07:48:20",
-      conditionStatus: "All Clear"
-    }
-  ]
+      conditionDate: '2019-09-19 07:48:20',
+      conditionStatus: 'All Clear',
+    },
+  ];
 
   // getTrails.mockImplementation(() => Promise.resolve(mockTrails));
-  fetchData.mockImplementation(() => Promise.resolve(mockTrails))
+  fetchData.mockImplementation(() => Promise.resolve(mockTrails));
 
   beforeEach(() => {
-    wrapper = shallow(<App getTrails={mockGetTrails}/>)
+    wrapper = shallow(<App getTrails={mockGetTrails} />);
   });
 
   it('should match snapshot', () => {
-    expect(wrapper).toMatchSnapshot()
-  })
+    expect(wrapper).toMatchSnapshot();
+  });
 
   it.skip('should return array of trails for based on lon and lat interpolated', async () => {
-    window.fetch = jest.fn().mockImplementation(() => {
-      return Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve(mockResponse)
-      });
-    });
-    const filteredTrailData = jest.fn()
-    const mockLat = 39.7392
-    const mockLon = 104.9903
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve(mockResponse),
+    }));
+    const filteredTrailData = jest.fn();
+    const mockLat = 39.7392;
+    const mockLon = 104.9903;
     const mockUrl = `https://www.mtbproject.com/data/get-trails?lat=${mockLat}&lon=-${mockLon}&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a`;
 
     await wrapper.instance().getLatLon(mockLat, mockLon);
 
     fetchData(mockUrl)
-      .then(results => expect(results).toEqual(mockResponse.trails))
-      .catch(error => error)
-    });
-
-    it.skip('should call fetchData, filteredTrailData, and getTrails when getLatLon is called', () => {
-      const mockLat = 39.7392
-      const mockLon = 104.9903
-      const mockUrl = `https://www.mtbproject.com/data/get-trails?lat=${mockLat}&lon=-${mockLon}&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a`;
-      const filteredTrailData = jest.fn()
-      const getTrails = jest.fn()
-
-      wrapper.instance().getLatLon(mockLat, mockLon)
-
-      expect(fetchData).toHaveBeenCalledWith(mockUrl);
-      expect(filteredTrailData).toHaveBeenCalledWith(mockTrails);
-      expect(getTrails).toHaveBeenCalledWith(mockTrails);
-    });
-
+      .then((results) => expect(results).toEqual(mockResponse.trails))
+      .catch((error) => error);
   });
+
+  it.skip('should call fetchData, filteredTrailData, and getTrails when getLatLon is called', () => {
+    const mockLat = 39.7392;
+    const mockLon = 104.9903;
+    const mockUrl = `https://www.mtbproject.com/data/get-trails?lat=${mockLat}&lon=-${mockLon}&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a`;
+    const filteredTrailData = jest.fn();
+    const getTrails = jest.fn();
+
+    wrapper.instance().getLatLon(mockLat, mockLon);
+
+    expect(fetchData).toHaveBeenCalledWith(mockUrl);
+    expect(filteredTrailData).toHaveBeenCalledWith(mockTrails);
+    expect(getTrails).toHaveBeenCalledWith(mockTrails);
+  });
+});
 
 describe('mapDispatchToProps', () => {
-    it('calls dispatch when a getTrails action is called', () => {
-      const mockDispatch = jest.fn();
-      const mockGetTrails = jest.fn();
-      const filteredTrailData = jest.fn()
-      const wrapper = shallow(<App getTrails={mockGetTrails}/>)
-      const mockTrails = [
-        {
-          key: 46286,
-          id: 46286,
-          name: "Betasso Preserve",
-          stars: 4,
-          difficulty: "greenBlue",
-          descent: -829,
-          conditionDate: "2019-10-03 22:57:25",
-          conditionStatus: "All Clear"
-        },
-        {
-          key: 601365,
-          id: 601365,
-          name: "Walker Ranch",
-          stars: 3.9,
-          difficulty: "blueBlack",
-          descent: -1510,
-          conditionDate: "2019-09-19 07:48:20",
-          conditionStatus: "All Clear"
-        }
-      ]
-      const actionToDispatch = getTrails('GET_TRAILS', mockTrails);
-      const mappedProps = mapDispatchToProps(mockDispatch);
+  it('calls dispatch when a getTrails action is called', () => {
+    const mockDispatch = jest.fn();
+    const mockGetTrails = jest.fn();
+    const filteredTrailData = jest.fn();
+    const wrapper = shallow(<App getTrails={mockGetTrails} />);
+    const mockTrails = [
+      {
+        key: 46286,
+        id: 46286,
+        name: 'Betasso Preserve',
+        stars: 4,
+        difficulty: 'greenBlue',
+        descent: -829,
+        conditionDate: '2019-10-03 22:57:25',
+        conditionStatus: 'All Clear',
+      },
+      {
+        key: 601365,
+        id: 601365,
+        name: 'Walker Ranch',
+        stars: 3.9,
+        difficulty: 'blueBlack',
+        descent: -1510,
+        conditionDate: '2019-09-19 07:48:20',
+        conditionStatus: 'All Clear',
+      },
+    ];
+    const actionToDispatch = getTrails('GET_TRAILS', mockTrails);
+    const mappedProps = mapDispatchToProps(mockDispatch);
 
-      mappedProps.getTrails('GET_TRAILS', mockTrails);
+    mappedProps.getTrails('GET_TRAILS', mockTrails);
 
-      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
-    });
-
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
+});

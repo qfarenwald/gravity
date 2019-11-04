@@ -1,8 +1,8 @@
 export const trails = (state = [], action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'GET_TRAILS':
-      return action.trails
+      return action.trails;
     default:
-      return state
+      return state;
   }
-}
+};

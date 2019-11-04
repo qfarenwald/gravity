@@ -1,9 +1,9 @@
-export const getTrails = trails => ({
+export const getTrails = (trails) => ({
   type: 'GET_TRAILS',
-  trails
-})
+  trails,
+});
 
-export const makeBooking = booking => ({
+export const makeBooking = (booking) => ({
   type: 'MAKE_BOOKING',
-  booking
-})
+  booking,
+});
