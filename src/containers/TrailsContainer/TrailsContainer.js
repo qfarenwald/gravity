@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { Trail } from '../Trail/Trail';
 import './TrailsContainer.css';
 
-export const TrailsContainer = ({ trails }) => {
+export const TrailsContainer = ({ trails, match }) => {
+  console.log(match)
   const trailsToDisplay = trails.map((trail) => (
     <Trail
       key={trail.id}
@@ -20,6 +21,7 @@ export const TrailsContainer = ({ trails }) => {
 
   return (
     <div className="TrailsContainer">
+      <h2>{match.location.pathname.split('/')[2].toUpperCase()}</h2>
       <h3>PICK YOUR TRAIL</h3>
       {trailsToDisplay}
       <Link to="/" className="link"><h5>BACK TO LOCATIONS</h5></Link>
