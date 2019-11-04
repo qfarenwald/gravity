@@ -51,7 +51,7 @@ describe('fetchData', () => {
       statusText: 'Invalid API key: You must be granted a valid key.',
     }));
 
-    const mockUrl = 'https://www.mtbproject.com/data/get-trails?lat=39.7392&lon=-104.9903&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a';
+    const mockUrl = 'https://www.mtbproject.com/data/get-trails?lat=39.7392&lon=-104.9903&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317aYOLO';
 
     expect(fetchData(mockUrl)).rejects.toEqual(Error('Invalid API key: You must be granted a valid key.'));
   });
