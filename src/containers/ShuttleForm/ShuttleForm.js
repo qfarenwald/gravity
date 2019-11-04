@@ -83,21 +83,21 @@ export class ShuttleForm extends Component {
         />
         <input className="ShuttleForm-input"
           name="date"
-          type="number"
+          type="text"
           placeholder="Enter Date (mm/dd)"
           value={this.state.date}
           onChange={this.handleChange}
         />
         <input className="ShuttleForm-input"
           name="starttime"
-          type="number"
+          type="text"
           placeholder="Enter Start Time (00:00 am/pm)"
           value={this.state.starttime}
           onChange={this.handleChange}
         />
         <input className="ShuttleForm-input"
           name="endtime"
-          type="number"
+          type="text"
           placeholder="Enter End Time (00:00 am/pm)"
           value={this.state.endtime}
           onChange={this.handleChange}

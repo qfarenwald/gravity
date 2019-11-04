@@ -44,7 +44,7 @@ exports[`ShuttleForm should match snapshot 1`] = `
     name="date"
     onChange={[Function]}
     placeholder="Enter Date (mm/dd)"
-    type="number"
+    type="text"
     value=""
   />
   <input
@@ -52,7 +52,7 @@ exports[`ShuttleForm should match snapshot 1`] = `
     name="starttime"
     onChange={[Function]}
     placeholder="Enter Start Time (00:00 am/pm)"
-    type="number"
+    type="text"
     value=""
   />
   <input
@@ -60,7 +60,7 @@ exports[`ShuttleForm should match snapshot 1`] = `
     name="endtime"
     onChange={[Function]}
     placeholder="Enter End Time (00:00 am/pm)"
-    type="number"
+    type="text"
     value=""
   />
   <p
