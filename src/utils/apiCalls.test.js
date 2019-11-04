@@ -47,13 +47,12 @@ describe('fetchData', () => {
 
   it('should return an error (SAD)', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      ok: false,
-      statusText: 'Invalid API key: You must be granted a valid key.',
+      ok: false
     }));
 
     const mockUrl = 'https://www.mtbproject.com/data/get-trails?lat=39.7392&lon=-104.9903&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317aYOLO';
 
-    expect(fetchData(mockUrl)).rejects.toEqual(Error('Invalid API key: You must be granted a valid key.'));
+    expect(fetchData(mockUrl)).rejects.toEqual(Error());
   });
 
   it('should return an error if the server is down', () => {

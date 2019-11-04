@@ -47,8 +47,14 @@
     "gh-pages": "^2.1.1"
   },
   "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
-  }
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer"
+  ],
+  "collectCoverageFrom": [
+    "src/**/{!(serviceWorker),}.js",
+    "!src/index.js",
+    "!src/reducers/index.js",
+    "!src/api_key.js"
+  ]
+}
 }
