@@ -5,7 +5,6 @@ import { Trail } from '../Trail/Trail';
 import './TrailsContainer.css';
 
 export const TrailsContainer = ({ trails, match }) => {
-  console.log(match)
   const trailsToDisplay = trails.map((trail) => (
     <Trail
       key={trail.id}
