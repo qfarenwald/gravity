@@ -14,18 +14,10 @@ export const Trail = ({ name, stars, descent }) =>
 
   (
     <section className="Trail" id="trail">
-      <p className="Trail-p stars">
-        {stars}
-        {' '}
-Stars
-      </p>
+      <p className="Trail-p stars">{stars} Stars</p>
       <p className="Trail-p name">{name}</p>
-      <p className="Trail-p descent">
-        {descent}
-        {' '}
-ft Descent
-      </p>
-      <Link to="/shuttle"><button className="Trail-btn">BOOK</button></Link>
+      <p className="Trail-p descent">{descent} ft Descent</p>
+      <Link to={`/shuttle/${name}`}><button className="Trail-btn" id={name}>BOOK</button></Link>
     </section>
   );
 
