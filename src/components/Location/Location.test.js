@@ -10,7 +10,7 @@ describe('Location', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it.skip('should run getLatLon on click of the first button with Denver lat/lon', () => {
+  it('should run getLatLon on click of the first button with Denver lat/lon', () => {
     const mockGetLatLon = jest.fn();
     const wrapper = shallow(<Location getLatLon={mockGetLatLon} />);
 
@@ -19,7 +19,7 @@ describe('Location', () => {
     expect(mockGetLatLon).toHaveBeenCalledWith(39.7392, 104.9903);
   });
 
-  it.skip('should run getLatLon on click of the second button with Boulder lat/lon', () => {
+  it('should run getLatLon on click of the second button with Boulder lat/lon', () => {
     const mockGetLatLon = jest.fn();
     const wrapper = shallow(<Location getLatLon={mockGetLatLon} />);
 

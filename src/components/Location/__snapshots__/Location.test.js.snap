@@ -8,21 +8,21 @@ exports[`Location should match snapshot 1`] = `
     CHOOSE A LOCATION
   </h3>
   <Link
-    onClick={[Function]}
     to="/trails"
   >
     <button
       className="Location-btn"
+      onClick={[Function]}
     >
       DENVER
     </button>
   </Link>
   <Link
-    onClick={[Function]}
     to="/trails"
   >
     <button
       className="Location-btn"
+      onClick={[Function]}
     >
       BOULDER
     </button>

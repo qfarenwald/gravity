@@ -61,7 +61,6 @@ describe('App', () => {
     },
   ];
 
-  // getTrails.mockImplementation(() => Promise.resolve(mockTrails));
   fetchData.mockImplementation(() => Promise.resolve(mockTrails));
 
   beforeEach(() => {
@@ -72,24 +71,23 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it.skip('should return array of trails for based on lon and lat interpolated', async () => {
-    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      ok: true,
-      json: () => Promise.resolve(mockResponse),
-    }));
-    const filteredTrailData = jest.fn();
+  it('should return array of trails for based on lon and lat interpolated', async () => {
+    // window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+    //   ok: true,
+    //   json: () => Promise.resolve(mockResponse),
+    // }));
     const mockLat = 39.7392;
     const mockLon = 104.9903;
     const mockUrl = `https://www.mtbproject.com/data/get-trails?lat=${mockLat}&lon=-${mockLon}&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a`;
 
     await wrapper.instance().getLatLon(mockLat, mockLon);
 
-    fetchData(mockUrl)
-      .then((results) => expect(results).toEqual(mockResponse.trails))
-      .catch((error) => error);
+    console.log('hello', trails)
+
+    expect(trails).toEqual(mockTrails)
   });
 
-  it.skip('should call fetchData, filteredTrailData, and getTrails when getLatLon is called', () => {
+  it('should call fetchData, filteredTrailData, and getTrails when getLatLon is called', () => {
     const mockLat = 39.7392;
     const mockLon = 104.9903;
     const mockUrl = `https://www.mtbproject.com/data/get-trails?lat=${mockLat}&lon=-${mockLon}&maxDistance=10&key=200628346-0f130fc8870531d529e09b85e721317a`;
