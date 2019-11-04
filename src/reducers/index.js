@@ -5,5 +5,5 @@ import { bookings } from './bookings';
 
 export const rootReducer = combineReducers({
   trails,
-  bookings
-})
+  bookings,
+});

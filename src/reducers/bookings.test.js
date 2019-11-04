@@ -1,4 +1,4 @@
-import { bookings } from '../reducers/bookings';
+import { bookings } from './bookings';
 
 describe('bookings', () => {
   it('should return the initial state', () => {
@@ -12,21 +12,21 @@ describe('bookings', () => {
   it('should add booking to state', () => {
     const initialState = [];
     const mockNewBooking = {
-      name: "Quinne Farenwald",
-      email: "q.farenwald@gmail.com",
-      riders: "4",
-      bikes: "4",
-      date: "1211",
-      starttime: "1030",
-      endtime: "6",
+      name: 'Quinne Farenwald',
+      email: 'q.farenwald@gmail.com',
+      riders: '4',
+      bikes: '4',
+      date: '1211',
+      starttime: '1030',
+      endtime: '6',
       formReady: true,
-      redirect:false
-    }
+      redirect: false,
+    };
     const state = initialState;
     const action = {
       type: 'MAKE_BOOKING',
-      booking: mockNewBooking
-    }
+      booking: mockNewBooking,
+    };
 
     const newState = [...initialState, mockNewBooking];
 
@@ -34,5 +34,4 @@ describe('bookings', () => {
 
     expect(result).toEqual(newState);
   });
-
 });
