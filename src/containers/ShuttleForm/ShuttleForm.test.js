@@ -109,23 +109,23 @@ describe('ShuttleForm', () => {
     expect(wrapper.state('endtime')).toEqual(inputEvent.target.value);
   });
 
-  it.skip('should set state of redirect when setRedirect is called with a click event', () => {
-    const wrapper = shallow(<ShuttleForm />);
+  it('should set state of redirect when setRedirect is called with a click event', () => {
+    const wrapper = shallow(<ShuttleForm makeBooking={makeBooking}/>);
     const clickEvent = {
       preventDefault: jest.fn(),
       target: {
         name: 'redirect',
-        value: 'true',
+        value: true,
       },
     };
 
     wrapper.instance().handleSubmit(clickEvent);
 
-    expect(wrapper.state('redirect')).toEqual(inputEvent.target.value);
+    expect(wrapper.state('redirect')).toEqual(clickEvent.target.value);
   });
 
-  it.skip('should call handleSubmit when the login button is clicked', () => {
-    const wrapper = shallow(<ShuttleForm />);
+  it('should call handleSubmit when the login button is clicked', () => {
+    const wrapper = shallow(<ShuttleForm makeBooking={makeBooking}/>);
     const mockEvent = { preventDefault: jest.fn() };
     wrapper.instance().handleSubmit = jest.fn();
     wrapper.instance().makeBooking = jest.fn();

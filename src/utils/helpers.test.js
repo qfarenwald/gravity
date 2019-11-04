@@ -2,7 +2,7 @@ import { filteredTrailData } from './helpers';
 
 
 describe('helpers', () => {
-  it('should return an array of filtered movie data', () => {
+  it('should return an array of filtered trail data', () => {
     const mockApiTrails = [{
       id: 46286,
       name: 'Betasso Preserve',
