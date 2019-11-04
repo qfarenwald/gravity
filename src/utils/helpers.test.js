@@ -1,5 +1,6 @@
 import helpers from './helpers';
 import { filteredTrailData } from './helpers'
+
 describe('helpers', () => {
 
   it('should return an array of filtered movie data', () => {
